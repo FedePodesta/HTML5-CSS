@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 07 - Formularios</title>
+    <style>
+        div {
+            padding: 10px;
+        }
+
+        .color {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        
+        .rojo {
+            background-color: red;
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- GET o POST -->
+    <form action="enviar.php" method="get"> <!-- novalidate --> <!-- enctype="multipart/form-data" -->
+        <div>
+            <label for="nombreid">Nombre:</label>
+            <input type="text" name="nombre" id="nombreid" value="jonathan" required>
+        </div>
+        <div>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Ej: nombre@server.com">
+        </div>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad" min="1" max="100">
+            <span>Sin puntos ni guiones</span>
+        </div>
+        <div>
+            <label for="tel">Telefono:</label>
+            <input type="tel" name="tel" id="tel">
+        </div>
+        <div>
+            <label for="url">Web:</label>
+            <input type="url" name="url" id="url" placeholder="Ej: https://www.facebook.com">
+            <span>Debe comenzar con http:// o https://</span>
+        </div>
+        <div>
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha">
+        </div>
+        <div>
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" name="hora">
+        </div>
+        <div>
+            <label for="clave">Clave</label>
+            <input type="password" id="clave" name="clave">
+        </div>
+        <div>
+            <label for="search">Search</label>
+            <input type="search" id="search" name="search">
+        </div>
+        <div>
+            <h2>Sexo</h2>
+            <input type="radio" id="mujer" name="sexo" value="mujer">
+            <label for="mujer">Mujer</label>
+
+            <input type="radio" id="hombre" name="sexo" value="hombre" checked>
+            <label for="hombre">Hombre</label>
+        </div>
+        <div>
+            <h2>Colores</h2>
+
+            <label for="rojo" class="color rojo"></label>
+            <input type="radio" name="color" id="rojo" value="red" class="oculto">
+
+            <label for="azul" class="color azul"></label>
+            <input type="radio" name="color" id="azul" value="blue" class="oculto">
+
+            <label for="verde" class="color verde"></label>
+            <input type="radio" name="color" id="verde" value="green" class="oculto">
+
+        </div>
+        <div>
+            <h2>Gustos</h2>
+
+            <input type="checkbox" id="leer" name="leer" value="leer">
+            <label for="leer">Leer</label>
+
+            <input type="checkbox" id="escribir" name="escribir" value="escribir">
+            <label for="escribir">Escribir</label>
+
+            <input type="checkbox" id="dibujar" name="dibujar" value="dibujar" checked>
+            <label for="dibujar">Dibujar</label>
+        </div>
+        <div>
+            <label for="comentario">Comentario</label>
+            <!-- <textarea id="comentario" name="comentario">Este es el valor</textarea> -->
+            <textarea id="comentario" name="comentario"></textarea>
+        </div>
+        <div>
+            <label for="pais">Pais</label>
+            <select id="pais" name="pais">
+                <option value="bra">Brasil</option>
+                <option value="chi">Chile</option>
+                <option value="arg" selected>Argentina</option>
+            </select>
+        </div>
+
+
+        <div>
+            <button type="submit">Enviar</button>
+
+            <!-- <button type="submit">Enviar</button>
+            <input type="submit" value="Enviar">
+
+            <button type="reset">Reset</button>
+            <input type="reset" value="Reset">
+
+            <button type="button">Boton</button>
+            <input type="button" value="Boton"> -->
+        </div>
+    </form>
+</body>
+</html>

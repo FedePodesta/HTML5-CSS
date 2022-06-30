@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 200px 40px auto 50px;
+            grid-template-areas:
+                "header header header"
+                "nav nav nav"
+                "article section aside"
+                "footer footer footer";
+            gap: 20px 30px; /* row-gap column-gap */
+        }
+
+        header {
+            /* grid-column-start: 1;
+            grid-column-end: 4;
+
+            grid-row-start: 1;
+            grid-row-end: 2; */
+            grid-area: header;
+        }
+
+        nav {
+            /* grid-column: 1 / 4;
+            grid-row: 2 / 3; */
+            grid-area: nav;
+        }
+
+        aside {
+            /* grid-column: 1 / 2;
+            grid-row: 3 / 4; */
+            grid-area: aside;
+        }
+
+        section {
+            /* grid-column: 2 / 3;
+            grid-row: 3 / 4; */
+            grid-area: section;
+        }
+
+        article {
+            /* grid-column: 3 / 4;
+            grid-row: 3 / 4; */
+            grid-area: article;
+        }
+
+        footer {
+            /* grid-column: 1 / 4;
+            grid-row: 4 / 5; */
+            grid-area: footer;
+        }
+
+        main {
+            display: contents;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="grid">
+        <header class="item" style="background-color: red;">HEADER</header>
+        <nav class="item" style="background-color: blue;">NAV</nav>
+        <aside class="item" style="background-color: green;">ASIDE</aside>
+        <section class="item" style="background-color: orange;">SECTION</section>
+        <article class="item" style="background-color: pink;">ARTICLE</article>
+        <footer class="item" style="background-color: gray;">FOOTER</footer>
+    </div> -->
+
+    <div class="grid">
+        <header class="item" style="background-color: red;">HEADER</header>
+        <nav class="item" style="background-color: blue;">NAV</nav>
+        <main>
+            <aside class="item" style="background-color: green;">ASIDE</aside>
+            <section class="item" style="background-color: orange;">SECTION</section>
+            <article class="item" style="background-color: pink;">ARTICLE</article>
+        </main>
+        <footer class="item" style="background-color: gray;">FOOTER</footer>
+    </div>
+</body>
+</html>

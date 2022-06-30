@@ -1,0 +1,31 @@
+body {
+    background-color: grey;
+}
+
+/*a {
+    color: green;
+}*/
+a {
+    text-decoration: none;
+}
+
+a:link{/*novisitado */
+ color: green;
+}
+
+a:visited{/*visitados */
+       color: black;
+}
+
+a:active { /*click mantenido */
+    color: yellow;
+}
+
+a:hover { /*sacar subrayado */
+    text-decoration: underline;
+}
+
+h1:hover { /*cuando pasas el mouse cambia en este caso el color dela letra y el background */
+    color: white;
+    background-color: orange;
+}

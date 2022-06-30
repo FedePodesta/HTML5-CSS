@@ -1,0 +1,78 @@
+/*
+    selector {
+        propiedad: valor;
+        propiedad2: valor;
+    }
+*/
+/* Comentario */
+
+h1 {
+    color: green;
+}
+
+h2 {
+    color: white;
+    background-color: black;
+}
+
+h3 {
+    color: red;
+}
+
+h4 {
+    color: rgb(255, 0, 0);
+}
+
+h5 {
+    color: #FF0000;
+}
+
+h6 {
+    background-color: #467a33;
+}
+
+/* p {
+    color: blue;
+} */
+
+div p {
+    color: blue;
+}
+
+/* Selector de ID */
+#item, #item2 {
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    background-color: #AAA;
+}
+
+/* #item2 {
+    color: blue;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    background-color: #AAA;
+} */
+
+/* Selector de Class */
+.parrafos {
+    color: orange;
+}
+
+.rojo {
+    color: red;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+.italica {
+    font-style: italic;
+}
+
+.subrayado {
+    text-decoration: underline;
+}

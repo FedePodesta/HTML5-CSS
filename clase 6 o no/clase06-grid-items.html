@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            /* auto-fit, auto-fill */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item" style="background-color: red;">div</div>
+        <div class="item" style="background-color: blue;">div</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 09</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo"></div>
+    </header>
+    <nav class="nav"></nav>
+    <main class="main">
+        <section class="reproductor">
+            <!--
+                https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+                reemplazar watch?v= por embed/
+
+                https://www.youtube.com/embed/8aGhZQkoFbQ
+            -->
+            <!-- Compartir - Incorporar - Copiar -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8aGhZQkoFbQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe" name="marco"></iframe>
+
+            <h1 class="titulo">What the heck is the event loop anyway? | Philip Roberts | JSConf EU</h1>
+
+            <p><strong>2,489,334 views  Oct 9, 2014</strong>  JavaScript programmers like to use words like, “event-loop”, “non-blocking”, “callback”, “asynchronous”, “single-threaded” and “concurrency”.</p>
+
+            <p>We say things like “don’t block the event loop”, “make sure your code runs at 60 frames-per-second”, “well of course, it won’t work, that function is an asynchronous callback!”</p>
+
+            <p>If you’re anything like me, you nod and agree, as if it’s all obvious, even though you don’t actually know what the words mean; and yet, finding good explanations of how JavaScript actually works isn’t all that easy, so let’s learn!</p>
+
+            <p>With some handy visualisations, and fun hacks, let’s get an intuitive understanding of what happens when JavaScript runs.</p>
+
+            <p>Transcript: <a href="http://2014.jsconf.eu/speakers/philip" target="_blank">http://2014.jsconf.eu/speakers/philip</a>...</p>
+
+            <p>License: For reuse of this video under a more permissive license please get in touch with us. The speakers retain the copyright for their performances.</p>
+
+            <div class="flex">
+                <div>
+                    <a href="https://www.youtube.com/c/JSConfEU" target="_blank" class="canal">JSConf</a>
+                    <span class="subscribers">238K subscribers</span>
+                </div>
+                <button class="btn">SUSCRIBE</button>
+            </div>
+
+
+            <article class="comentario">
+                <div>
+                    <img src="img/perfil.png">
+                </div>
+                <div class="ctn">
+                    <h2 class="nombre">
+                        Apoorva S A
+                        <span class="fecha">2 months ago</span>
+                    </h2>
+                    <p>Today I had interview and was asked about execution context and i explained him based on this video. my interviewer was so impressed with the my answer. he said "This is the best explanation i have heard so far". made my day 🙂</p>
+                </div>
+            </article>
+        </section>
+        <aside class="videos">
+            <a href="https://www.youtube.com/embed/cCOL7MC4Pl0" target="marco" class="link">
+                <article class="video">
+                    <div>
+                        <img class="img" src="https://i.ytimg.com/vi/cCOL7MC4Pl0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVvKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCNyZyuY2TeOzf1f0L385dEy5C9YQ" alt="setTimeout, micro tasks">
+                    </div>
+                    <div class="ctn-texto">
+                        <h2 class="titulo">Jake Archibald: In The Loop - setTimeout, micro tasks</h2>
+                        <span class="texto">JSConf</span>
+                        <span class="texto">516K views - 4 years ago</span>
+                    </div>
+                </article>
+            </a>
+
+            <a href="https://www.youtube.com/embed/hBk4nV7q6-w" target="marco" class="link">
+                <article class="video">
+                    <div>
+                        <img class="img" src="https://i.ytimg.com/vi/hBk4nV7q6-w/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVvKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0ljLCgRqhnVzNsgfahwDjKaHNjQ" alt="TypeScript tips and Tricks with Matt">
+                    </div>
+                    <div class="ctn-texto">
+                        <h2 class="titulo">TypeScript tips and Tricks with Matt</h2>
+                        <span class="texto">Visual Studio Code</span>
+                        <span class="texto">77K views - Streamed 2 months ago</span>
+                    </div>
+                </article>
+            </a>
+
+            <a href="https://www.youtube.com/embed/BwuLxPH8IDs" target="marco" class="link">
+                <article class="video">
+                    <div>
+                        <img class="img" src="https://i.ytimg.com/vi/BwuLxPH8IDs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVvKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBeLBtQbysjcU7CViBYOmmGgp-7Nw" alt="TypeScript Course for Beginners">
+                    </div>
+                    <div class="ctn-texto">
+                        <h2 class="titulo">TypeScript Course for Beginners - Learn TypeScript from Scratch!</h2>
+                        <span class="texto">Academind</span>
+                        <span class="texto">1.5M views - 2 years ago</span>
+                    </div>
+                </article>
+            </a>
+
+            <!-- <iframe src="https://www.lanacion.com.ar/"></iframe>
+            <iframe src="https://www.clarin.com/"></iframe>
+            <iframe src="https://www.facebook.com/"></iframe>
+            <iframe src="https://www.google.com/search?q=html5.4&oq=html5.4&aqs=chrome..69i57.1929j0j4&sourceid=chrome&ie=UTF-8"></iframe> -->
+
+            <!-- <iframe src="producto.html" name="marco"></iframe>
+            <a href="otro.html" target="marco">Cargar otro</a> -->
+
+            <!-- Compartir - Insertar un mapa - Copiar HTML -->
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.095356277037!2d-58.379927227014164!3d-34.60355868919059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x568d6d5f7f1f535d!2sEducaci%C3%B3nIT!5e0!3m2!1ses!2sar!4v1656539167602!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+        </aside>
+    </main>
+    <footer class="footer">Todos los derechos reservados &reg; 2022</footer>
+
+    <!-- <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls autoplay muted loop>
+        Your browser does not support HTML video.
+    </video> -->
+</body>
+</html>

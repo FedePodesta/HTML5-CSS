@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #444;
+        }
+
+        .header {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            border-bottom: 1px solid #999;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: white;
+        }
+
+        .ctn-logo {
+            width: 150px;
+        }
+
+        .searchbox {
+            /* width: calc(100% - 300px); */
+            flex-grow: 1;
+            display: flex;
+        }
+
+        .input {
+            flex-grow: 1;
+            /* border-top-left-radius: 10px; */
+            /* border-bottom-left-radius: 10px; */
+            border-radius: 10px 0 0 10px;
+            border: 1px solid purple;
+            padding: 0 10px;
+        }
+
+        .input:focus {
+            outline: none;
+        }
+
+        .buscar {
+            padding: 10px;
+            border-radius: 0 10px 10px 0;
+            background-color: purple;
+            border: none;
+            color: white;
+        }
+
+        .final {
+            width: 150px;
+            text-align: center;
+        }
+
+        .mi-cuenta {
+            text-decoration: none;
+            color: #444;
+        }
+
+        .mi-cuenta .fa-solid {
+            margin-right: 4px;
+        }
+
+        .logo {
+            display: block;
+            height: 34px;
+            background-image: url("https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__large_plus.png");
+            background-repeat: no-repeat;
+            /* background-position: 50%; */
+        }
+
+        .nav {
+            padding: 0 10px;
+        }
+
+        .lista {
+            list-style: none;
+            display: flex;
+        }
+
+        .item {
+            position: relative;
+            padding: 10px 10px 10px 0;
+        }
+
+        .item:last-child {
+            padding-right: 0;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .link:hover {
+            color: #888;
+        }
+
+        .main {
+            padding: 10px;
+            display: flex;
+            background-color: #F2F2F2;
+        }
+
+        .filtros {
+            width: 25%;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* gap: 20px; */
+            width: 75%;
+        }
+
+        .footer {
+            padding: 20px 10px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .producto {
+            position: relative;
+            box-sizing: border-box;
+            text-align: center;
+            width: 32%;
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-decoration: none;
+            color: #444;
+            box-shadow: 0 0 3px #888;
+            border-radius: 4px;
+        }
+
+        .producto:hover {
+            box-shadow: 0 0 6px #888;
+        }
+
+        .producto .fav {
+            position: absolute;
+            right: 10px;
+            color: blue;
+        }
+
+        .producto .fav:hover {
+            color: rgb(5, 5, 135);
+        }
+
+        .imagen {
+            max-width: 100%;
+        }
+
+        .nombre {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .precio-anterior {
+            font-size: 16px;
+            color: #888;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+
+        .descuento {
+            font-size: 16px;
+            background-color: rgb(203, 66, 114);
+            border-radius: 4px;
+            padding: 4px;
+            color: white;
+        }
+
+        .precio {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 48px;
+        }
+
+        .cuotas {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .envio {
+            display: inline-block;
+            background-color: rgb(203, 247, 203);
+            border-radius: 4px;
+            padding: 4px;
+            color: green;
+            margin-bottom: 15px;
+        }
+
+        .retirar {
+            display: inline-block;
+            background-color: rgb(203, 247, 203);
+            border-radius: 4px;
+            padding: 4px;
+            color: green;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 200px;
+            left: calc(50% - 200px);
+            width: 400px;
+            z-index: 2;
+        }
+
+        .modal .modal__contenedor {
+            position: relative;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .modal .modal__close {
+            font-size: 36px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .modal .modal__body {
+            border-top: 1px solid #888;
+            border-bottom: 1px solid #888;
+            margin: 20px 0;
+            padding: 20px 0;
+        }
+
+        .modal .modal__close:hover {
+            color: #888;
+        }
+
+        .modal .modal__footer {
+            text-align: right;
+        }
+
+        .modal .modal__ok {
+            background-color: rgb(194, 0, 194);
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .modal .modal__ok:hover {
+            background-color: rgb(127, 0, 127);
+        }
+
+        .modal .modal__background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* .modal::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+        } */
+
+        .sublista {
+            display: none;
+            position: absolute;
+            list-style: none;
+            background-color: #333;
+            padding: 20px 0;
+            left: -55px;
+            z-index: 1;
+            border-radius: 5px;
+            top: 39px;
+        }
+
+        .sublista::before {
+            content: "";
+            border-style: solid;
+            border-width: 10px;
+            border-color: transparent transparent #333 transparent;
+            position: absolute;
+            right: calc(50% - 10px);
+            top: -20px;
+        }
+
+        .sublista .sublink {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 4px 20px;
+            white-space: nowrap;
+        }
+
+        .sublista .sublink:hover {
+            background-color: rgb(87, 87, 239);
+        }
+
+        .lista .item:hover .sublista {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="ctn-logo">
+            <a href="#" class="logo"></a>
+        </div>
+        <div class="searchbox">
+            <input type="search" class="input">
+            <button class="buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div class="final">
+            <a href="#" class="mi-cuenta" id="mi-cuenta">
+                <i class="fa-solid fa-circle-user"></i>
+                Mi Cuenta
+            </a>
+        </div>
+    </header>
+    <nav class="nav">
+        <ul class="lista">
+            <li class="item">
+                <a href="#" class="link">HOME</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">PRODUCTOS</a>
+                <ul class="sublista">
+                    <li class="subitem">
+                        <a href="#" class="sublink">Producto Numero Uno</a>
+                    </li>
+                    <li class="subitem">
+                        <a href="#" class="sublink">Producto Especial Nuevo</a>
+                    </li>
+                    <li class="subitem">
+                        <a href="#" class="sublink">Productos con Descuentos</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="#" class="link">CONTACTO</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="main">
+        <aside class="filtros">
+            <h2>Filtros</h2>
+        </aside>
+        <section class="productos">
+            <a href="#" class="producto">
+                <article>
+                    <i class="fa-solid fa-heart fav"></i>
+                    <img src="https://images.fravega.com/f300/52414afface4d1a6f573adb80add9109.jpg" alt="Heladera Cíclica Patrick HPK135M00B01 277Lt" class="imagen">
+                    <h2 class="nombre">Heladera Cíclica Patrick HPK135M00B01 277Lt</h2>
+                    <span class="precio-anterior">$80.599</span>
+                    <span class="descuento">11% OFF</span>
+                    <span class="precio">$71.499</span>
+                    <span class="cuotas">12 Cuotas sin interés</span>
+                    <span class="envio">Llega GRATIS en 48hs</span>
+                    <div>
+                        <span class="retirar">¡Retiralo YA!</span>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="producto">
+                <article>
+                    <i class="fa-solid fa-heart fav"></i>
+                    <img src="https://images.fravega.com/f300/52414afface4d1a6f573adb80add9109.jpg" alt="Heladera Cíclica Gafa HGF357AFB Blanca 286Lts" class="imagen">
+                    <h2 class="nombre">Heladera Cíclica Gafa HGF357AFB Blanca 286Lts</h2>
+                    <span class="precio-anterior">$82.999</span>
+                    <span class="descuento">14% OFF</span>
+                    <span class="precio">$70.999</span>
+                    <span class="cuotas">12 Cuotas sin interés</span>
+                    <span class="envio">Llega GRATIS en 48hs</span>
+                    <div>
+                        <span class="retirar">¡Retiralo YA!</span>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="producto">
+                <article>
+                    <i class="fa-solid fa-heart fav"></i>
+                    <img src="https://images.fravega.com/f300/52414afface4d1a6f573adb80add9109.jpg" alt="Heladera Cíclica Gafa HGF387AFB Blanca 375Lts" class="imagen">
+                    <h2 class="nombre">Heladera Cíclica Gafa HGF387AFB Blanca 375Lts</h2>
+                    <span class="precio-anterior">$103.899</span>
+                    <span class="descuento">11% OFF</span>
+                    <span class="precio">$91.999</span>
+                    <span class="cuotas">12 Cuotas sin interés</span>
+                    <span class="envio">Llega GRATIS en 48hs</span>
+                </article>
+            </a>
+
+            <a href="#" class="producto">
+                <article>
+                    <i class="fa-solid fa-heart fav"></i>
+                    <img src="https://images.fravega.com/f300/52414afface4d1a6f573adb80add9109.jpg" alt="Heladera Cíclica Patrick HPK135M00B01 277Lt" class="imagen">
+                    <h2 class="nombre">Heladera Cíclica Patrick HPK135M00B01 277Lt</h2>
+                    <span class="precio-anterior">$80.599</span>
+                    <span class="descuento">11% OFF</span>
+                    <span class="precio">$71.499</span>
+                    <span class="cuotas">12 Cuotas sin interés</span>
+                    <span class="envio">Llega GRATIS en 48hs</span>
+                    <div>
+                        <span class="retirar">¡Retiralo YA!</span>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="producto">
+                <article>
+                    <i class="fa-solid fa-heart fav"></i>
+                    <img src="https://images.fravega.com/f300/52414afface4d1a6f573adb80add9109.jpg" alt="Heladera Cíclica Gafa HGF357AFB Blanca 286Lts" class="imagen">
+                    <h2 class="nombre">Heladera Cíclica Gafa HGF357AFB Blanca 286Lts</h2>
+                    <span class="precio-anterior">$82.999</span>
+                    <span class="descuento">14% OFF</span>
+                    <span class="precio">$70.999</span>
+                    <span class="cuotas">12 Cuotas sin interés</span>
+                    <span class="envio">Llega GRATIS en 48hs</span>
+                    <div>
+                        <span class="retirar">¡Retiralo YA!</span>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="producto">
+                <article>
+                    <i class="fa-solid fa-heart fav"></i>
+                    <img src="https://images.fravega.com/f300/52414afface4d1a6f573adb80add9109.jpg" alt="Heladera Cíclica Gafa HGF387AFB Blanca 375Lts" class="imagen">
+                    <h2 class="nombre">Heladera Cíclica Gafa HGF387AFB Blanca 375Lts</h2>
+                    <span class="precio-anterior">$103.899</span>
+                    <span class="descuento">11% OFF</span>
+                    <span class="precio">$91.999</span>
+                    <span class="cuotas">12 Cuotas sin interés</span>
+                    <span class="envio">Llega GRATIS en 48hs</span>
+                </article>
+            </a>
+        </section>
+    </main>
+    <footer class="footer">Todos los derechos reservados &reg; 2022</footer>
+
+    <div id="modal" class="modal">
+        <div class="modal__background" id="background"></div>
+        <div class="modal__contenedor">
+            <div class="modal__header">
+                <h2 class="modal__title">Titulo</h2>
+                <i class="fa-solid fa-xmark modal__close" id="close"></i>
+            </div>
+            <div class="modal__body">
+                <p class="modal__message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur aut illo ipsum sit necessitatibus corporis. Totam, porro suscipit. Fugiat?</p>
+            </div>
+            <div class="modal__footer">
+                <button class="modal__ok" id="btn-ok">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const close = document.getElementById('close');
+        const btnOk = document.getElementById('btn-ok');
+        const background = document.getElementById('background');
+        const miCuenta = document.getElementById('mi-cuenta');
+
+        miCuenta.addEventListener('click', function () {
+            modal.classList.add('show');
+        });
+
+        close.addEventListener('click', function () {
+            modal.classList.remove('show');
+        });
+
+        btnOk.addEventListener('click', function () {
+            modal.classList.remove('show');
+        });
+
+        background.addEventListener('click', function () {
+            modal.classList.remove('show');
+        });
+    </script>
+</body>
+</html>

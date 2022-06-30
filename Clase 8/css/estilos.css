@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    height: 200px;
+    background-color: olive;
+    background-image: url("../img/images.jpeg");
+    background-size: cover;
+}
+
+.nav {
+    background-color: black;
+    padding: 20px;
+}
+
+.nav .link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav .link:hover {
+    color: orange;
+}
+
+.main {
+    display: flex;
+}
+
+.filtros {
+    background-color: #EEE;
+    padding: 20px;
+    width: 25%;
+}
+
+.filtros .titulo {
+    font-size: 18px;
+    border-bottom: 1px solid #888;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.filtros .filtro {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.filtros .filtro:hover .label {
+    text-decoration: underline;
+}
+
+.filtros .label {
+    cursor: pointer;
+}
+
+.productos {
+    padding: 20px;
+    background-color: #AAA;
+    width: 75%;
+}
+
+.producto {
+    box-sizing: border-box;
+    width: 33%;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #999;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.producto .nombre {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.producto .imagen {
+    max-width: 100%;
+}
+
+.producto .precio-anterior {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.producto .descuento {
+    display: inline-block;
+    padding: 3px;
+    background-color: rgb(145, 8, 45);
+    color: white;
+    border-radius: 4px;
+    margin-left: 4px;
+}
+
+.producto .precio {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.producto .envio {
+    display: inline-block;
+    padding: 3px;
+    background-color: #9bd681;
+    color: #256e05;
+    border-radius: 4px;
+}
+
+.producto .negrita {
+    font-weight: bold;
+}
+
+.footer {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}

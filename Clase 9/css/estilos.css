@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.header {
+    padding: 15px;
+}
+
+.header .logo {
+    background-image: url("../img/logo.png");
+    width: 120px;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav {
+    height: 40px;
+    background-color: olive;
+}
+
+.main {
+    display: flex;
+}
+
+.reproductor {
+    padding: 15px;
+    width: 65%;
+}
+
+.reproductor .titulo {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.reproductor .flex {
+    display: flex;
+    border: 1px solid #CCC;
+    padding: 5px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.reproductor .canal {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reproductor .btn {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.reproductor .btn:hover {
+    background-color: rgb(93, 3, 3);
+}
+
+.reproductor .subscribers {
+    font-size: 12px;
+}
+
+.reproductor .comentario {
+    display: flex;
+    margin: 20px 0;
+}
+
+.reproductor .ctn {
+    padding-top: 10px;
+}
+
+.reproductor .fecha {
+    font-weight: normal;
+}
+
+.reproductor .nombre {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.iframe {
+    border: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.videos {
+    padding: 15px;
+    width: 35%;
+}
+
+.videos .link {
+    text-decoration: none;
+    color: #333;
+}
+
+.video {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.video .titulo {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.video .ctn-texto {
+    padding-left: 10px;
+}
+
+.video .texto {
+    display: block;
+    font-size: 12px;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+}
